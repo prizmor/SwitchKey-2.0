@@ -1,0 +1,38 @@
+<div class="auth">
+  <div *ngIf="activatedRoute.snapshot.params.type === 'login'" class="bar">
+    <div class="container">
+      <div class="title">Вход</div>
+      <div class="form">
+        <div><input class="text" type="text" [(ngModel)]="auth.loginValue" placeholder="Логин"></div>
+        <div class="error">{{auth.errorsFormAuth.login}}</div>
+        <div><input class="text" type="password" [(ngModel)]="auth.passwordValue" placeholder="Пароль"></div>
+        <div class="error">{{auth.errorsFormAuth.password}}</div>
+        <div class="button"><input type="button" (click)="auth.auth()" value="Войти" class="button"/></div>
+        <div class="error">{{auth.errorsFormAuth.api}}</div>
+        <div class="type" (click)="auth.setType(activatedRoute.snapshot.params.type)">Нет аккаунта</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="activatedRoute.snapshot.params.type === 'register'" class="bar">
+    <div class="container">
+      <div class="title">Регистрация</div>
+      <div class="form">
+        <div><input class="text" [(ngModel)]="auth.loginValue" placeholder="Логин"></div>
+        <div class="error">{{auth.errorsFormAuth.login}}</div>
+        <div><input class="text" [(ngModel)]="auth.emailValue" placeholder="Почта"></div>
+        <div class="error">{{auth.errorsFormAuth.email}}</div>
+        <div><input class="text" type="password" [(ngModel)]="auth.passwordValue" placeholder="Пароль"></div>
+        <div class="error">{{auth.errorsFormAuth.password}}</div>
+        <div class="button"><input type="button" (click)="auth.register()" value="Зарегистрироватся" class="button"/>
+        </div>
+        <div class="error">{{auth.errorsFormAuth.api}}</div>
+        <div class="type" (click)="auth.setType(activatedRoute.snapshot.params.type)">Есть аккаунт</div>
+      </div>
+    </div>
+  </div>
+  <div class="logo">
+    <div>
+      SWITCHKEY
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+$textColor: #C4C4C4;
+$backgroundColor: #1F1F1F;
+$barsColor: #2F2F2F;
+$logoColor: #3C3C3C;
+$shadowColor: #1D1D1D;
+$buttonColor: #222222;
+$textFieldColor: #444242;
+
+$errTextColor: #FF6262;
+$writtenTextColor: #FFFFFF;
+
+
+$textColorWhite: #676767;
+$backgroundColorWhite: #FFFFFF;
+$barsColorWhite: #EBEBEB;
+$logoColorWhite: #D7D7D7;
+$shadowColorWhite: #959595;
+$buttonColorWhite: #E2E2E;
+$textFieldColorWhite: #CECECE;
+
+$errTextColorWhite: #FF6262;
+$writtenTextColorWhite: #000000;
+
+
+
+
+
+
+:export {
+  textColor: $textColor;
+  backgroundColor: $backgroundColor;
+  barsColor: $barsColor;
+  logoColor: $logoColor;
+  shadowColor: $shadowColor;
+  buttonColor: $buttonColor;
+  textFieldColor: $textFieldColor;
+
+  errTextColor: $errTextColor;
+  writtenTextColor: $writtenTextColor;
+}

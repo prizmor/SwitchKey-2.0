@@ -1,4 +1,122 @@
+@import "../assets/export";
+
 .auth {
   width: 100vw;
   height: 100vh;
+}
+
+.bar {
+  width: 100vw;
+  height: 100vh;
+  .topBar {
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    background: $barsColor;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $logoColor;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .textName {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+
+    .buttons {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .leftBarMenu {
+    width: 200px;
+    height: calc(100% - 44px);
+    background: $buttonColor;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    .add {
+      height: 40px;
+      width: 100%;
+      background: $buttonColor;
+      display: flex;
+      padding-left: 22px;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      &:hover {
+        background: #191919;
+      }
+    }
+
+    .items {
+      height: calc(100% - 86px);
+      width: 100%;
+
+      .item {
+        height: 40px;
+        width: 100%;
+        background: $buttonColor;
+        display: flex;
+        padding-left: 30px;
+        align-items: center;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background: #191919;
+        }
+      }
+    }
+
+    .settings {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      width: 100%;
+      background: $buttonColor;
+      display: flex;
+      padding-left: 22px;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+
+
+      &:hover {
+        background: #191919;
+      }
+    }
+  }
+
+  .app {
+    width: 100%;
+    height: calc(100% - 44px);
+    position: absolute;
+    top: 44px;
+    left: 0;
+  }
+}
+
+.noBar {
+  width: 100vw;
+  height: 100vh;
+}
+
+.w {
+  width: calc(100% - 200px)!important;
+  left: 200px !important;
 }

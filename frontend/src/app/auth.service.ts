@@ -15,6 +15,7 @@ export class AuthService {
     api: ''
   };
 
+  authorized = false;
   login: string;
   token: string;
 
@@ -23,8 +24,14 @@ export class AuthService {
   public emailValue = '';
 
   constructor(public router: Router, private http: HttpClient) {
-    this.token = JSON.parse(localStorage.getItem('token'));
-    this.login = JSON.parse(localStorage.getItem('login'));
+    if (JSON.parse(localStorage.getItem('token'))) {
+      this.authorized = true;
+      this.token = JSON.parse(localStorage.getItem('token'));
+      this.login = JSON.parse(localStorage.getItem('login'));
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/auth/login']);
+    }
   }
 
   setType(type): void {
@@ -67,7 +74,9 @@ export class AuthService {
         localStorage.setItem('token', JSON.stringify(res.token));
         localStorage.setItem('login', JSON.stringify(res.login));
         this.login = res.login;
+        this.token = res.token;
         //this.ws.connect(res.token);
+        this.authorized = true;
         this.router.navigate(['/']);
       }, (err: HttpErrorResponse) => {
         this.passwordValue = '';

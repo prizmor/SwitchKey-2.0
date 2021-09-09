@@ -1,3 +1,51 @@
-<div class="auth">
+<div class="auth" *ngIf="!auth.authorized">
   <router-outlet></router-outlet>
 </div>
+
+<div class="bar" *ngIf="auth.authorized">
+  <div class="topBar">
+    <div class="logo" (click)="menu = !menu">
+      SK
+    </div>
+
+    <div class="textName">
+        test
+    </div>
+
+    <div class="buttons">
+        test
+    </div>
+  </div>
+  <div class="leftBarMenu" *ngIf="menu">
+    <div class="add">
+      Создать
+    </div>
+    <div class="items">
+      <div class="item">
+        item
+      </div>
+      <div class="item">
+        item
+      </div>
+      <div class="item">
+        item
+      </div>
+      <div class="item">
+        item
+      </div>
+      <div class="item">
+        item
+      </div>
+    </div>
+    <div class="settings">
+      Настройки
+    </div>
+  </div>
+  <div class="app" [class.w]="menu">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--<div class="noBar" *ngIf="auth.authorized">
+  <router-outlet></router-outlet>
+</div>-->

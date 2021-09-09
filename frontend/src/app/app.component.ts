@@ -11,10 +11,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  menu = false;
   constructor(
     private electronService: ElectronService,
     private translate: TranslateService,
-    private auth: AuthService,
+    public auth: AuthService,
     public router: Router
   ) {
     this.translate.setDefaultLang('en');
@@ -31,10 +32,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.auth.token) {
-      this.router.navigate(['/auth/login']);
-    } else {
-      this.router.navigate(['/']);
-    }
   }
 }

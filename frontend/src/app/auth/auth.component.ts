@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../auth.service';
+const { version, author } = require('../config');
 
 @Component({
   selector: 'app-auth',
@@ -8,6 +9,8 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  version = version;
+  author = author;
 
   constructor( public router: Router, public activatedRoute: ActivatedRoute, public auth: AuthService) { }
 

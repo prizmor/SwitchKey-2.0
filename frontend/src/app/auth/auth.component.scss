@@ -69,5 +69,11 @@
     justify-content: center;
     align-items: center;
     font-size: 84px;
+    .info {
+      font-size: 12px;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+    }
   }
 }

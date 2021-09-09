@@ -16,12 +16,15 @@ export class AuthService {
   };
 
   login: string;
+  token: string;
 
   public loginValue = '';
   public passwordValue = '';
   public emailValue = '';
 
   constructor(public router: Router, private http: HttpClient) {
+    this.token = JSON.parse(localStorage.getItem('token'));
+    this.login = JSON.parse(localStorage.getItem('login'));
   }
 
   setType(type): void {

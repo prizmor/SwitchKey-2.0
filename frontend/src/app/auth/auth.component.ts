@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../auth.service';
-const { version, author } = require('../config');
+const { version, author } = require('../../assets/config');
 
 @Component({
   selector: 'app-auth',

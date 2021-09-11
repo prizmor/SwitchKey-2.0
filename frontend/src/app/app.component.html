@@ -4,8 +4,14 @@
 
 <div class="bar" *ngIf="auth.authorized">
   <div class="topBar">
-    <div class="logo" (click)="menu = !menu">
-      SK
+    <div class="logoMin" [class.logoBig]="menu" (click)="menu = !menu">
+
+      <span *ngIf="menu">
+        SWITCHKEY
+      </span>
+      <span *ngIf="!menu">
+        SK
+      </span>
     </div>
 
     <div class="textName">
@@ -13,10 +19,22 @@
     </div>
 
     <div class="buttons">
-        test
+      <div class="login">
+        {{auth.login}}
+      </div>
+
+      <div class="dots" (click)="dots = !dots">
+        ···
+      </div>
+
+      <div class="menu" [class.menuHidden]="!dots">
+        <div class="item red" (click)="auth.logout()">
+          Выйти
+        </div>
+      </div>
     </div>
   </div>
-  <div class="leftBarMenu" *ngIf="menu">
+  <div class="leftBarMenu" [class.leftBarMenuBig]="menu">
     <div class="add">
       Создать
     </div>

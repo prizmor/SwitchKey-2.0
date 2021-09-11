@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 })
 export class AppComponent implements OnInit {
   menu = false;
+  dots = false;
   constructor(
     private electronService: ElectronService,
     private translate: TranslateService,

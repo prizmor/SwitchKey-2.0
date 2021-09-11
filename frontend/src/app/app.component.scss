@@ -17,8 +17,9 @@
     left: 0;
     display: flex;
     justify-content: space-between;
+    z-index: 111121;
 
-    .logo {
+    .logoMin {
       width: 44px;
       height: 44px;
       display: flex;
@@ -27,6 +28,11 @@
       background: $logoColor;
       font-size: 22px;
       cursor: pointer;
+      transition: .55s width;
+    }
+
+    .logoBig {
+      width: 200px;
     }
 
     .textName {
@@ -39,6 +45,50 @@
       height: 100%;
       display: flex;
       align-items: center;
+      padding-right: 5px;
+
+      .login {
+        margin-right: 10px;
+      }
+
+      .dots {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+          background: #1D1D1D;
+        }
+      }
+
+      .menu {
+        width: 100px;
+        background: $buttonColor;
+        position: absolute;
+        top: 44px;
+        right: 0;
+        transition: .55s right;
+
+        .item {
+          width: 100%;
+          height: 34px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &:hover {
+            background: #191919;
+          }
+        }
+      }
+      .menuHidden {
+        right: -100px !important;
+      }
     }
   }
 
@@ -48,7 +98,8 @@
     background: $buttonColor;
     position: absolute;
     top: 44px;
-    left: 0;
+    left: -200px;
+    transition: .55s left;
     .add {
       height: 40px;
       width: 100%;
@@ -102,12 +153,18 @@
     }
   }
 
+
+  .leftBarMenuBig {
+    left: 0 !important;
+  }
+
   .app {
     width: 100%;
     height: calc(100% - 44px);
     position: absolute;
     top: 44px;
     left: 0;
+    transition: .55s width, .55s left;
   }
 }
 
@@ -119,4 +176,8 @@
 .w {
   width: calc(100% - 200px)!important;
   left: 200px !important;
+}
+
+.red {
+  color: $errTextColor;
 }

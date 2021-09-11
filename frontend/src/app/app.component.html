@@ -19,12 +19,8 @@
     </div>
 
     <div class="buttons">
-      <div class="login">
+      <div class="login" (click)="dots = !dots">
         {{auth.login}}
-      </div>
-
-      <div class="dots" (click)="dots = !dots">
-        ···
       </div>
 
       <div class="menu" [class.menuHidden]="!dots">
